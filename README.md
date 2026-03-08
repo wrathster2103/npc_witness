@@ -42,12 +42,28 @@ Recommended Next Steps After Download
 - If you use a dispatch resource not listed above, set `Config.DispatchResource` to its resource name or adapt the adapter.
 
 NPC Witness Behavior Details
-- **Phone Call** (45% chance): Witness stands still using phone animation, simulating calling police.
-- **Follow/Curious** (35% chance): Witness watches the suspect, turns to face them, and occasionally moves closer for better observation.
-- **Panic/Flee** (20% chance): Witness panics and runs away from the suspect or a random direction.
+- **Phone Call** (45% chance, configurable): Witness stands still using phone animation, simulating calling police.
+- **Follow/Curious** (35% chance, configurable): Witness watches the suspect, turns to face them, and occasionally moves closer for better observation.
+- **Panic/Flee** (20% chance, configurable): Witness panics and runs away from the suspect or a random direction.
 - **Dynamic Updates**: If witness remains in sight, they periodically update suspect position (every 8 seconds by default).
 - **Loss of Suspect**: If suspect goes out of view, witness briefly plays phone animation then despawns.
 - **Lifetime**: Witnesses remain active for 60 seconds (default) or until cleaned up.
+- **Customize Behavior**: Edit `Config.Behaviors` in `config.lua` to adjust the distribution percentages (must total 100).
+
+Changelog
+
+**v1.1.0** - NPC Behavior Polish
+- Added configurable behavior distribution percentages in `config.lua`
+- PhoneCall: 45% (calls police via phone animation)
+- Follow: 35% (follows and observes suspect)
+- Panic: 20% (panics and flees)
+- Enhanced fxmanifest description to reflect behavior variety
+
+**v1.0.0** - Initial Release
+- Crime detection (weapon fire, melee combat)
+- Dynamic NPC spawning with varied behaviors
+- Dispatch integration (ps-dispatch, qb-dispatch, ox_dispatch auto-detect)
+- Auto-cleanup and configurable witness timings
 
 Contributing
 - PRs welcome. Please follow existing code style and keep changes focused.
